@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Categories from '../../containers/Categories';
 
 import styles from './styles.css'
 
-class App extends Component {
+class Login extends Component {
   render() {
     return (
-      <div className={styles.app}>
-        <Categories />
+      <div className={styles.login}>
         {this.props.children}
       </div>
     );
   }
 }
 
-App.propTypes = {
+Login.propTypes = {
   children: PropTypes.object,
 };
 
-export default App;
+export default Login;
