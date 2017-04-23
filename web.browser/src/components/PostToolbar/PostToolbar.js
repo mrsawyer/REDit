@@ -3,7 +3,7 @@ import FlatButton from 'material-ui/FlatButton';
 import AppBar from 'material-ui/AppBar';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 
-const PostToolbar = () => {
+const PostToolbar = ({sortNewest, sortPopular}) => {
   return (
     <div style={{background: '#e8e8e8', color:'#8b8b8b'}}>
       <AppBar
@@ -12,7 +12,13 @@ const PostToolbar = () => {
         zDepth={0}
         showMenuIconButton={false}
         style={{background: '#e8e8e8', color:'#8b8b8b'}}
-        iconElementRight={<div><span>Sort:</span><FlatButton style={{color: 'black'}} label="Newest"/><FlatButton style={{color: 'black'}} label="Popular" /></div>}
+        iconElementRight={
+          <div>
+            <span>Sort:</span>
+            <FlatButton style={{color: 'black'}} label="Newest" onTouchTap={() => { sortNewest() }}/>
+            <FlatButton style={{color: 'black'}} label="Popular" onTouchTap={() => { sortPopular() }} />
+          </div>
+        }
       />
     </div>
   );

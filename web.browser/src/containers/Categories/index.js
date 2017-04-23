@@ -13,15 +13,13 @@ import styles from './styles.css';
 class Categories extends Component {
   render() {
     return (
-      <div>
-        <Drawer >
-          <AppBar 
-          title="RED it" 
+      <Drawer >
+        <AppBar
+          title="RED it"
           iconElementLeft={<IconButton><CommunicationImportContacts /></IconButton>}
-          />
-          <Week />
-        </Drawer>
-      </div>
+        />
+        <Week />
+      </Drawer>
     );
   }
 }

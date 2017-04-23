@@ -7,14 +7,10 @@ class NotFound extends Component {
   render() {
     return (
       <div className={styles.found}>
-        {this.props.children}
+        Not Found
       </div>
     );
   }
 }
-
-NotFound.propTypes = {
-  children: PropTypes.object,
-};
 
 export default NotFound;
