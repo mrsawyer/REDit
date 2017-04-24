@@ -7,6 +7,6 @@ export const SORT_NEWEST = 'SORT_NEWEST';
 // Function
 export const updateVote = upvote => ({ type: UPDATE_VOTE, votes: upvote });
 
-export const sortPopular = posts => ({ type: SORT_POPULAR, posts });
+export const sortPopular = () => ({ type: SORT_POPULAR });
 
-export const sortNewest = posts => ({ type: SORT_NEWEST, posts });
+export const sortNewest = () => ({ type: SORT_NEWEST });

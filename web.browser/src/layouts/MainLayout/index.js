@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import HeaderBar from '../../components/HeaderBar';
 
-import styles from './styles.css'
+import styles from './styles.css';
 
 const MainLayout = ({ children }) => {
   return (

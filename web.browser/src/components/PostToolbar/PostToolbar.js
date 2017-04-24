@@ -1,9 +1,9 @@
 import React from 'react';
 import FlatButton from 'material-ui/FlatButton';
 import AppBar from 'material-ui/AppBar';
-import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+//import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 
-const PostToolbar = ({sortNewest, sortPopular}) => {
+const PostToolbar = ({ sortNewest, sortPopular }) => {
   return (
     <div style={{background: '#e8e8e8', color:'#8b8b8b'}}>
       <AppBar

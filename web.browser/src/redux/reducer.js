@@ -6,25 +6,26 @@ import {
 
 import { data } from '../mock-data';
 
-const initialData = data.posts;
+const initialData = data;
 
-export function SortPosts(state = initialData, action) {
+export function postsReducer(state = initialData.posts, action) {
   switch (action.type) {
     case SORT_POPULAR:
       return state.sort((a, b) => b.votes - a.votes);
     case SORT_NEWEST:
       return state.sort((a, b) => b.id - a.id);
-    default:
-      return state;
-  }
-}
-
-export function UpVotes(state, action) {
-  switch (action.type) {
     case UPDATE_VOTE:
       return [...state, { votes: action.votes }];
     default:
       return state;
   }
 }
+
+// export function Weeks(state, action) {
+//   switch (action.type) {
+    
+//     default:
+//       return state;
+//   }
+// }
 

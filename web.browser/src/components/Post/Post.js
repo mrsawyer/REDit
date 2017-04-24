@@ -10,15 +10,15 @@ const Post = ({ post, updateVote }) => {
   return (
     <Card style={{ width: '98%', margin: '15px auto' }} key={post.id}>
       <CardTitle
-        style={{padding:'8px 15px'}}
-        titleColor='#551A8B' 
-        titleStyle={{fontSize: '1.25rem', fontWeight:'bold', padding:'0px'}} 
-        title={post.title} 
+        style={{ padding: '8px 15px' }}
+        titleColor='#551A8B'
+        titleStyle={{ fontSize: '1.25rem', fontWeight: 'bold', padding: '0px' }} 
+        title={post.title}
       />
-      <CardText style={{fontSize:'1rem', padding:'8px 15px'}}>
+      <CardText style={{ fontSize: '1rem', padding: '8px 15px' }}>
         {post.description}
       </CardText>
-      <div style={{display:'flex', justifyContent:'space-between'}}>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <CardActions>
           <FlatButton
             label={ 'Vote ' + post.votes}
@@ -27,9 +27,9 @@ const Post = ({ post, updateVote }) => {
             onTouchTap={() => { updateVote(post); }}
           />
         </CardActions>
-        {post.categories.map((cats) => (
+        {post.categories.map(cats => (
           <Chip
-            style={{margin:'10px'}}
+            style={{ margin: '10px' }}
           >
             {cats}
           </Chip>

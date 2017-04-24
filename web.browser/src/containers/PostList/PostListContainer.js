@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import PostList from './PostList';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateVote, sortPopular, sortNewest } from '../../redux/actions';
+import PostList from './PostList';
 
-import { data } from '../../mock-data';
-
-import './styles.css'
+import './styles.css';
 
 class PostListContainer extends Component {
   // constructor() {
@@ -23,15 +21,15 @@ class PostListContainer extends Component {
   // }
 
   updateVote(post) {
-    const upVotes = post.votes++;
-    this.props.dispatch(updateVote(upVotes));
+    const upVote = post.votes + 1;
+    this.props.dispatch(updateVote(upVote));
     // let moreVotes = post.votes++;
     // this.setState({
     //   votes: moreVotes
     // });
   }
 
-  sortPopular(){
+  sortPopular() {
     this.props.dispatch(sortPopular());
     // let sortedPosts = posts.sort(function (a, b) {
     //   return b.votes - a.votes;
@@ -57,13 +55,23 @@ class PostListContainer extends Component {
   render() {
     return (
       <PostList
-        posts={data.posts}
+        posts={this.props.posts}
         updateVote={this.updateVote}
-        sortPopular={() => this.sortPopular()}
-        sortNewest={() => this.sortNewest()}
+        sortPopular={this.sortPopular}
+        sortNewest={this.sortNewest}
       />
     );
   }
 }
 
-export default connect()(PostListContainer);
+PostListContainer.propTypes = {
+  dispatch: PropTypes.func.isRequired
+};
+
+function mapStateToProps(state) {
+  return {
+    posts: state.posts,
+  };
+}
+
+export default connect(mapStateToProps)(PostListContainer);
